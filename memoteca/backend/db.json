@@ -1,0 +1,22 @@
+{
+  "pensamentos":[
+    {
+      "id":1,
+      "conteudo": "Prefiro morrer do que perder a vida",
+      "autoria": "Chaves",
+      "modelo": "modelo1"
+    },
+    {
+      "id":2,
+      "conteudo": "As três lindas tranças de um careca",
+      "autoria": "Desconhecido",
+      "modelo": "modelo2"
+    },
+    {
+      "id":1,
+      "conteudo": "Num ninho de mafagafos contém 7 mafagafinhos",
+      "autoria": "Desmafagador",
+      "modelo": "modelo3"
+    }
+  ]
+}
