@@ -1,5 +1,4 @@
 import { Component, OnInit } from '@angular/core';
-import { Pensamento } from '../pensamento';
 import { PensamentoService } from '../pensamento.service';
 import { Router } from '@angular/router';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
@@ -48,5 +47,17 @@ export class CriarPensamentoComponent {
   cancelar()
   {
     this.router.navigate(['/listarPensamento'])
+  }
+
+  habilitarBotao(): string
+  {
+    if(this.formulario.valid)
+    {
+      return 'botao'
+    }
+    else
+    {
+      return 'botao__desabilitado'
+    }
   }
 }
