@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { Pensamento } from '../pensamento';
 import { PensamentoService } from '../pensamento.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-listar-pensamento',
@@ -16,7 +17,10 @@ export class ListarPensamentoComponent {
   favoritos: boolean = false;
   listaFavoritos: Pensamento[] = []
 
-  constructor(private service: PensamentoService) { }
+  constructor(
+    private service: PensamentoService,
+    private router: Router
+    ) { }
 
   ngOnInit(): void
   {
@@ -38,25 +42,35 @@ export class ListarPensamentoComponent {
   }
 
   pesquisarPensamentos()
-    {
-      this.haMaisPensamentos = true;
-      this.paginaAtual = 1;
-      this.service.listar(this.paginaAtual, this.filtro, this.favoritos)
-      .subscribe(listaPensamentos => {
-        this.listaPensamentos = listaPensamentos
-      })
-    }
+  {
+    this.haMaisPensamentos = true;
+    this.paginaAtual = 1;
+    this.service.listar(this.paginaAtual, this.filtro, this.favoritos)
+    .subscribe(listaPensamentos => {
+      this.listaPensamentos = listaPensamentos
+    })
+  }
 
-    listarFavoritos()
-    {
-      this.favoritos = true;
-      this.haMaisPensamentos = true;
-      this.paginaAtual = 1;
-      this.service.listar(this.paginaAtual, this.filtro, this.favoritos)
-      .subscribe(listaPensamentosFavoritos => {
-        this.listaPensamentos = listaPensamentosFavoritos
-        this.listaFavoritos = listaPensamentosFavoritos
-      })
-    }
+  recarregarComponente()
+  {
+    this.favoritos = false;
+    this.paginaAtual = 1;
+
+    this.router.routeReuseStrategy.shouldReuseRoute = () => false;
+    this.router.onSameUrlNavigation = 'reload'
+    this.router.navigate([this.router.url])
+  }
+
+  listarFavoritos()
+  {
+    this.favoritos = true;
+    this.haMaisPensamentos = true;
+    this.paginaAtual = 1;
+    this.service.listar(this.paginaAtual, this.filtro, this.favoritos)
+    .subscribe(listaPensamentosFavoritos => {
+      this.listaPensamentos = listaPensamentosFavoritos
+      this.listaFavoritos = listaPensamentosFavoritos
+    })
+  }
 }
 
