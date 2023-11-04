@@ -4,42 +4,49 @@
       "id": 1,
       "conteudo": "Prefiro morrer do que perder a vida",
       "autoria": "Chaves",
-      "modelo": "modelo1"
+      "modelo": "modelo1",
+      "favorito": false
     },
     {
       "id": 2,
       "conteudo": "As quatro lindas tranças de um careca",
       "autoria": "Desconhecido",
-      "modelo": "modelo3"
+      "modelo": "modelo3",
+      "favorito": false
     },
     {
       "id": 3,
       "conteudo": "Num ninho de mafagafos contém 7 mafagafinhos",
       "autoria": "Desmafagador",
-      "modelo": "modelo3"
+      "modelo": "modelo3",
+      "favorito": false
     },
     {
       "conteudo": "Pensamento de teste",
       "autoria": "Alex",
       "modelo": "modelo2",
+      "favorito": false,
       "id": 4
     },
     {
       "conteudo": "Pensamento de Teste",
       "autoria": "paginação",
       "modelo": "modelo1",
+      "favorito": false,
       "id": 5
     },
     {
       "conteudo": "Pensamento de Teste 2",
       "autoria": "paginação",
       "modelo": "modelo2",
+      "favorito": false,
       "id": 6
     },
     {
       "conteudo": "Pensamento de Teste 3",
       "autoria": "paginação",
       "modelo": "modelo3",
+      "favorito": false,
       "id": 7
     }
   ]
