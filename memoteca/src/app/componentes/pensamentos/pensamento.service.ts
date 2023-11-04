@@ -14,13 +14,11 @@ export class PensamentoService {
 
   listar(pagina: number): Observable<Pensamento[]>
   {
-    const itensPorPagia = 6;
+    const itensPorPagina = 6;
 
     let params = new HttpParams()
     .set("_page", pagina)
-    .set("_limit", itensPorPagia)
-
-    //return this.http.get<Pensamento[]>(`${this.API}?_page=${pagina}&_limit=${itensPorPagia}`)
+    .set("_limit", itensPorPagina)
 
     return this.http.get<Pensamento[]>(this.API, {params})
   }
